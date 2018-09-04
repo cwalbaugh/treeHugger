@@ -1,0 +1,63 @@
+extends layout
+block content
+  .row.banner
+    .col-12
+      h1 Clay Hill Trees
+  .row
+    .col-12.col-lg-9
+      .row
+        .col-12.col-md-6
+          p.rating
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.far.fa-star
+            i.far.fa-star
+          p 1498 Bloomington Street, Iowa City IA 52245
+          .card.card-primary
+            .card-block
+              h2.card-title Tree Species
+              p.card-text Honey Locust
+              p.card-text Bur Oak
+          .card.card-primary
+            .card-block
+              h2.card-title Notes
+              p The hill rolling down from the parking lot is so named because it used to be where the clay was dug for bricks which were fired where the park shelter stands now.
+        .col-12.col-md-6.location-map
+         .card.card-primary
+           .card-block
+             h2.card-title Location map
+             img.img-fluid.rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=51.455041,-0.9690884&zoom=17&size=400x350&sensor=false&markers=51.455041,-0.9690884&scale=2')
+      .row
+         .col-12
+           .card.card-primary.review-card
+             .card-block
+               a.btn.btn-primary.float-right(href='/location/review/new') Add review
+               h2.card-header Reviews
+               .row.review
+                 .col-12.no-gutters.review-header
+                   span.rating
+                     i.fas.fa-star
+                     i.fas.fa-star
+                     i.fas.fa-star
+                     i.far.fa-star
+                     i.far.fa-star
+                   span.reviewAuthor Simon Holmes
+                   small.reviewTimestamp 16 February 2017
+                 .col-12
+                   p Beautiful entrance to quiet Hickory Hill Park.
+               .row.review
+                 .col-12.no-gutters.review-header
+                   span.rating
+                     i.fas.fa-star
+                     i.fas.fa-star
+                     i.fas.fa-star
+                     i.far.fa-star
+                     i.far.fa-star
+                   span.reviewAuthor Charlie Chaplin
+                   small.reviewTimestamp 14 February 2017
+                 .col-12
+                   p Watch out for the thorns on the Honey Locust, don't climb these ones.
+    .col-12.col-lg-3
+      p.lead
+      p| If you've been and you like it - or if you don't - please leave a review to help other people just like you.
