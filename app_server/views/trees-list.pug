@@ -1,59 +1,24 @@
 extends layout
+include _includes/sharedHTMLfunctions
 
 block content
   .row.banner
     .col-12
-      h1 TreeHugger
-        small &nbsp;Find great trees to enjoy near you!
+      h1= pageHeader.title
+          small &nbsp;#{pageHeader.strapline}
   .row
     .col-12.col-md-8
-      .card
-        .card-block
-          h4
-            a(href="/tree") Clay Hill Trees
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.badge-default.float-right 100m
-          p.address 1498 Bloomington Street, Iowa City, 52245
-          .features
-            span.badge.badge-warning Honey Locust
-            span.badge.badge-warning Ralston Creek
-
-      .card
-        .card-block
-          h4
-            a(href="/tree") Gulliver Tree
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.badge-default.float-right 150
-          p.address 1422 Bloomington Street, Iowa City, 52245
-          .features
-            span.badge.badge-warning White Pine
-            span.badge.badge-warning Sugar Pine
-
-      .card
-        .card-block
-          h4
-            a(href="/tree") Trail-marker
-            small &nbsp;
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.far.fa-star
-              i.far.fa-star
-            span.badge.badge-pill.badge-default.float-right 200
-          p.address 1409 Davenport Street, Iowa City, 52245
-          .features
-            span.badge.badge-warning Black Oak
-            span.badge.badge-warning Captain Irish
- 
+        each tree in trees
+            .card
+                .card-block
+                    h4
+                        a(href="/tree")= tree.name
+                        +outputRating(tree.rating)
+                    span.badge.badge-pill.badge-default.float-right= tree.distance
+                p.address= tree.address
+                .specieses
+                    each species in tree.specieses
+                        span.badge.badge-warning= species
+  .row
     .col-12.col-md-4
-      p.lead Tree Hugger helps you find and rate beautiful trees while learning about the area.
+      p.lead= sidebar
